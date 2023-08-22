@@ -6,6 +6,7 @@ const statusCode = {
   UNAUTHORIZED: 401, // не авторизован
   FORBIDDEN: 403, // запрещено
   OK: 200, // успешно
+  CONFLICT_ERROR: 409,
 };
 
 module.exports = statusCode;

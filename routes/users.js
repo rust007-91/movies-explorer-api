@@ -12,6 +12,6 @@ const {
 
 router.get('/me', getUser); // возвращает информацию о пользователе (email и имя)
 
-router.patch('/me', updateUser, userUpdateValidate); // обновляет информацию о пользователе (email и имя)
+router.patch('/me', userUpdateValidate, updateUser); // обновляет информацию о пользователе (email и имя)
 
 module.exports = router;

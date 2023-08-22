@@ -48,7 +48,7 @@ const createMovies = (req, res, next) => {
 const deleteMovies = (req, res, next) => {
   const filmId = req.params;
   Movie.findById(filmId)
-    .orFail(() => new NotFoundError({ message: 'Фильм с указанным _id не найдена.' }))
+    .orFail(() => new NotFoundError({ message: 'Фильм с указанным _id не найден.' }))
     .then((film) => {
       if (film.owner.toString() !== req.user._id) {
         next(new Forbidden({ message: 'Невозможно удалить чужой фильм' }));

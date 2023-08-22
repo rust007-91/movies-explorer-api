@@ -14,8 +14,8 @@ const {
 
 router.get('/', getMovies); // возвращает все сохранённые текущим пользователем фильмы
 
-router.post('/', createMovies, createMovieValidate); // создаёт фильм с переданными в теле параметрами
+router.post('/', createMovieValidate, createMovies); // создаёт фильм с переданными в теле параметрами
 
-router.delete('/:_id', deleteMovies, idValidate); // удаляет сохранённый фильм по id
+router.delete('/:_id', idValidate, deleteMovies); // удаляет сохранённый фильм по id
 
 module.exports = router;

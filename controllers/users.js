@@ -67,7 +67,7 @@ const updateUser = (req, res, next) => {
       runValidators: true, // данные будут валидированы перед изменением
       upsert: true, // если пользователь не найден, он будет создан
     })
-    .orFail(() => new BadRequestError({ message: 'Переданы некорректные данные' }))
+    .orFail(() => new NotFoundError({ message: 'Пользователь не найден' }))
     .then((user) => res.status(statusCode.OK).send(user))
     .catch(next);
 };
